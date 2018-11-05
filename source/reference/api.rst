@@ -1,3 +1,4 @@
+==========
 Python API
 ==========
 
@@ -9,18 +10,7 @@ Python API
 浏览 API
 *****************
 
-A quick way to see the API in action:
-
 快速查看API的方法：
-
-#. Add ``Packages\Default`` (**Preferences | Browse Packages…**) to your project.
-#. ``CTRL + SHIFT + F``
-#. Enter ``*.py`` in the **In Files:** field
-#. Check ``Use Buffer`` option
-#. Search API name
-#. ``F4``
-#. Study relevant source code
-
 
 #. 将 ``Packages\Default`` (**Preferences | Browse Packages…**) 添加到你的项目中.
 #. 按下组合键 ``CTRL + SHIFT + F``

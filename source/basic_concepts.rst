@@ -10,8 +10,8 @@
 这份文档是从Windows用户的角度撰写的，但是文档中提到的大部分内容只需要很小的变化就能在其他
 平台正常工作。
 
-除非特别说明，否则文档中所有的相对路径（例如 *Packages/User*）都是相对于*数据目录*的。
-后文将解释*数据目录*的含义。
+除非特别说明，否则文档中所有的相对路径（例如 :file:`Packages/User`）都是相对于 *数据目录* 的。
+后文将解释 *数据目录* 的含义。
 
 在介绍快捷键的时候，我们假定你正在使用系统默认的按键设定。由于Submline Text按键与命令映射
 的工作方式，**有些按键组合可能与你正在使用键盘的布局不同**。
@@ -39,9 +39,9 @@ Sublime Text是一款高度可扩展、可定制的文本编辑器。它已经�
 Sublime Text 2把几乎所有用户感兴趣的内容都存放在所谓的数据目录下。这个目录的位置是平台相
 关的：
 
-* **Windows平台**: *%APPDATA%\\Sublime Text 2*
-* **OS X平台**: *~/Library/Application Support/Sublime Text 2*
-* **Linux平台**: *~/.config/sublime-text-2*
+* **Windows平台**: :file:`%APPDATA%\\Sublime Text 2`
+* **OS X平台**: :file:`~/Library/Application Support/Sublime Text 2`
+* **Linux平台**: :file:`~/.config/sublime-text-2`
 
 对于使用 **portable installations（便携安装版）** 的用户，数据目录的位置则是
 *Sublime Text 2/Data* 。这里 *Sublime Text 2* 部分指的是你把包含Sublime Text 2的压缩包
@@ -57,16 +57,15 @@ Sublime Text 2把几乎所有用户感兴趣的内容都存放在所谓的数据
 Sublime Text而言有意义文件的文件夹就被叫做一个 *包* 。
 
 你可以通过Sublime Text 2的菜单来访问这个目录(**Preferences | Browse Packages...**)，
-也可以通过调用``sublime.packages_path()``这个api来访问。在本文档中，我们使用 *包组*、
+也可以通过调用 ``sublime.packages_path()`` 这个api来访问。在本文档中，我们使用 *包组*、
 *包组路径* 、*包组文件夹* 以及 *包组目录* 来指代这个文档。
 
 
-``User（用户）`` 包
+*User（用户）* 包
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 *Packages/User* 这个目录是一个存放所有用户自定义的插件、代码片段、宏等等的大杂烩。请把这个
-目录看成是你在包组目录中的私人领地。Sublime Text 2在升级的过程中永远不会覆盖*Packages/User*
-这个目录中的内容。
+目录看成是你在包组目录中的私人领地。Sublime Text 2在升级的过程中永远不会覆盖 ``Packages/User`` 这个目录中的内容。
 
 
 Python控制台以及Python API
@@ -131,7 +130,7 @@ Textmate兼容性
 
 除了命令有些差距之外，Sublime Text 2与Textmate的bundles（包）能较好的兼容。更进一步的说，
 为了识别为TM编写的bundles，Sublime Text要求所有的语法定义文件都包含 *.tmLanguage* 扩展名，
-并且所有的配置文件都有 *.tmPreferences*扩展名。这意味着即使 *.plist* 文件保存在 *Syntaxes*
+并且所有的配置文件都有 *.tmPreferences* 扩展名。这意味着即使 *.plist* 文件保存在 *Syntaxes*
 或者 *Preferences* 目录下，它们也会被忽略。
 
 

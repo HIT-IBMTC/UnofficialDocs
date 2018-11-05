@@ -1,38 +1,26 @@
 ===============
-Command Palette
-ÃüÁîÃæ°å
+å‘½ä»¤é¢æ¿
 ===============
 
 .. seealso::
-¸ü¶àĞÅÏ¢Çë²Î¿¼£º
   
-   :doc:`Reference for Command Palette <../reference/command_palette>`
-      Complete documentation on the command palette options.
-   :doc:`ÃüÁîÃæ°å²Î¿¼ÎÄµµ <../reference/command_palette>`
-      ÓĞ¹ØÃüÁîÃæ°åÑ¡ÏîµÄÍêÕûÎÄµµ¡£
+   :doc:`å‘½ä»¤é¢æ¿å‚è€ƒæ–‡æ¡£ <../reference/command_palette>`
+      æœ‰å…³å‘½ä»¤é¢æ¿é€‰é¡¹çš„å®Œæ•´æ–‡æ¡£ã€‚
 
 
-Overview
-¸ÅÊö
+æ¦‚è¿°
 ========
 
-The *command palette* is an interactive list bound to :kbd:`Ctrl+Shift+P` whose
-purpose is to execute commands. The command palette is fed entries with
-commands files. Usually, commands that don't warrant creating a key binding of
-their own are good candidates for inclusion in a ``.sublime-commands`` file.
-*ÃüÁîÃæ°å*ÊÇÒ»¸ö°ó¶¨µ½¼üÅÌ `Ctrl+Shift+P` µÄ½»»¥ÁĞ±í£¬ÆäÄ¿µÄÔÚÒâÖ´ĞĞÃüÁî¡£ÃüÁîÃæ°å
-ÓëÃüÁîÎÄ¼şÏà»¥ÁªÏµ¡£Í¨³££¬ÃüÁî²»±£Ö¤²úÉúÒ»¸ö°´¼ü°ó¶¨£¬¿ÉÒÔÔÚ ``.sublime-commands``
-ÖĞ×÷ÎªÒ»Ğ©ºÜºÃµÄºòÑ¡¡£
+*å‘½ä»¤é¢æ¿* æ˜¯ä¸€ä¸ªç»‘å®šåˆ°é”®ç›˜ `Ctrl+Shift+P` çš„äº¤äº’åˆ—è¡¨ï¼Œå…¶ç›®çš„åœ¨æ„æ‰§è¡Œå‘½ä»¤ã€‚å‘½ä»¤é¢æ¿
+ä¸å‘½ä»¤æ–‡ä»¶ç›¸äº’è”ç³»ã€‚é€šå¸¸ï¼Œå‘½ä»¤ä¸ä¿è¯äº§ç”Ÿä¸€ä¸ªæŒ‰é”®ç»‘å®šï¼Œå¯ä»¥åœ¨ ``.sublime-commands``
+ä¸­ä½œä¸ºä¸€äº›å¾ˆå¥½çš„å€™é€‰ã€‚
 
-File Format (Commands Files)
-ÎÄ¼ş¸ñÊ½£¨ÃüÁîÎÄ¼ş£©
+æ–‡ä»¶æ ¼å¼ï¼ˆå‘½ä»¤æ–‡ä»¶ï¼‰
 ============================
 
-Commands files use JSON and have the ``.sublime-commands`` extension.
-ÃüÁîÎÄ¼şÊ¹ÓÃJSON£¬²¢ÇÒÓĞÒ»¸ö ``.sublime-commands`` µÄÀ©Õ¹¡£
+å‘½ä»¤æ–‡ä»¶ä½¿ç”¨JSONï¼Œå¹¶ä¸”æœ‰ä¸€ä¸ª ``.sublime-commands`` çš„æ‰©å±•ã€‚
 
-Here's an excerpt from ``Packages/Default/Default.sublime-commands``::
-ÈçÏÂÊÇÀ´×Ô ``Packages/Default/Default.sublime-commands`` µÄÊµÀı::
+å¦‚ä¸‹æ˜¯æ¥è‡ª ``Packages/Default/Default.sublime-commands`` çš„å®ä¾‹::
 
    [
        { "caption": "Project: Save As", "command": "save_project_as" },
@@ -47,25 +35,17 @@ Here's an excerpt from ``Packages/Default/Default.sublime-commands``::
    ]
 
 ``caption``
-   Text for display in the command palette.
-   ÏÔÊ¾ÔÚÃüÁîÃæ°åÖĞµÄ±êÌâ.
+   æ˜¾ç¤ºåœ¨å‘½ä»¤é¢æ¿ä¸­çš„æ ‡é¢˜.
 ``command``
-   Command to be executed.
-   ´ıÖ´ĞĞµÄÃüÁî.
+   å¾…æ‰§è¡Œçš„å‘½ä»¤.
 ``args``
-   Arguments to pass to ``command``.
-   ´«¸ø ``command`` µÄ²ÎÊı¡£
+   ä¼ ç»™ ``command`` çš„å‚æ•°ã€‚
 
-How to Use the Command Palette
-ÈçºÎÊ¹ÓÃÃüÁîÃæ°å
+å¦‚ä½•ä½¿ç”¨å‘½ä»¤é¢æ¿
 ==============================
 
-#. Press :kbd:`Ctrl+Shift+P`
-#. °´ÏÂ¼üÅÌµÄ`Ctrl+Shift+P`
-#. Select command
-#. Ñ¡ÔñÃüÁî
+#. æŒ‰ä¸‹é”®ç›˜çš„ `Ctrl+Shift+P`
+#. é€‰æ‹©å‘½ä»¤
 
-The command palette filters entries by context, so whenever you open it, you
-won't always see all the commands defined in every ``.sublime-commands`` file.
-ÃüÁîÃæ°åÍ¨¹ıÎÄ±¾¹ıÂËÑ¡Ïî£¬ËùÒÔÎŞÂÛÊ²Ã´Ê±ºò´ò¿ª£¬Äã¶¼²»»á¿´µ½Ã¿Ò»¸ö ``.sublime-commands`` 
-ÎÄ¼şµÄËùÓĞÃüÁî¡£
+å‘½ä»¤é¢æ¿é€šè¿‡æ–‡æœ¬è¿‡æ»¤é€‰é¡¹ï¼Œæ‰€ä»¥æ— è®ºä»€ä¹ˆæ—¶å€™æ‰“å¼€ï¼Œä½ éƒ½ä¸ä¼šçœ‹åˆ°æ¯ä¸€ä¸ª ``.sublime-commands`` 
+æ–‡ä»¶çš„æ‰€æœ‰å‘½ä»¤ã€‚
