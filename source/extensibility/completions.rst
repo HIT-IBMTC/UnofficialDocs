@@ -1,43 +1,35 @@
 ===========
-Completions
+补全
 ===========
 
 .. seealso::
 
    :doc:`Reference for completions <../reference/completions>`
-      Complete documentation on all available options.
+      有关所有可用选项的完整文档。
    `Sublime Text Documentation <http://www.sublimetext.com/docs/2/tab_completion.html>`_
-   	Official documentation on this topic.
+   	关于此主题的官方文档。
 
-Completions provide functionality in the spirit of IDEs to suggest terms and
-insert snippets. Completions work through the completions list or, optionally,
-by pressing :kbd:`Tab`.
+补全提供了IDE的精神功能，以建议术语和插入片段。补全通过补全列表工作，或者可选择按 :kbd:`Tab` 键。
 
-Note that completions in the broader sense of *words that Sublime Text will
-look up and insert for you* are not limited to completions files, because other
-sources contribute to the list of words to be completed, namely:
+请注意，Sublime Text将查找并为您插入的更广泛意义上的单词的补全不仅限于补全文件，因为其他来源有助于补全单词列表，即：
 
-	 * Snippets 
-	 * API-injected completions
-	 * Buffer contents
+	 * 代码片段
+	 * API注入的补全
+	 * 缓冲内容
 
-However, ``.sublime-completions`` files are the most explicit way Sublime Text
-provides you to feed it completions. This topic deals with the creation of
-``.sublime-completions`` files as well as with the interaction between all
-sources for completions.
+但是，``.sublime-completions`` 文件是Sublime Text为您提供的最明确的方式。本主题涉及 ``.sublime-completions`` 文件的创建以及所有补全源之间的交互。
 
 
-File Format
+文件格式
 ===========
 
-Completions are JSON files with the ``.sublime-completions`` extension.
-Entries in completions files can contain either snippets or plain strings.
+补全是具有 ``.sublime-completions`` 扩展名的JSON文件。补全文件中的条目可以包含片段或纯字符串。
 
 
-Example
+例如
 *******
 
-Here's an excerpt from the HTML completions:
+以下是HTML补全的摘录：
 
 .. code-block:: js
 
@@ -53,14 +45,9 @@ Here's an excerpt from the HTML completions:
 	}
 
 ``scope``
-	Determines when the completions list will be populated with this
-	list of completions. See :ref:`scopes-and-scope-selectors` for more
-	information.
+	确定何时使用此补全列表填充补全列表。有关更多信息，请参阅 :ref:`scopes-and-scope-selectors`。
 
-In the example above, we've used trigger-based completions only, but
-completions files support simple completions too. Simple completions are just
-plain strings. Expanding our example with a few simple completions, we'd end up
-with a list like so:
+在上面的示例中，我们仅使用基于触发器的补全，但补全文件也支持简单补全。简单的补全只是简单的字符串。通过一些简单的补全扩展我们的示例，我们最终得到一个如下列表：
 
 .. code-block:: js
 
@@ -80,80 +67,56 @@ with a list like so:
 	}
 
 
-Sources for Completions
+补全来源
 =======================
 
-Completions not only originate in ``.sublime-completions`` files. This is the
-exhaustive list of sources for completions:
+补全不仅源自 ``.sublime-completions`` 文件。这是补全源的详尽列表：
 
-	* Snippets
-	* API-injected completions
-	* ``.sublime-completions`` files
-	* Words in buffer
+	* 代码片段
+	* API注入的补全
+	* ``.sublime-completions`` 文件
+	* 缓冲区中的单词
 
-Priority of Sources for Completions
+补全来源的优先顺序
 ***********************************
 
-This is the order in which completions are prioritized:
+这是补全优先顺序的排列
 
-	* Snippets
-	* API-injected completions
-	* ``.sublime-completions`` files
-	* Words in buffer
+	* 代码片段
+	* API注入的补全
+	* ``.sublime-completions`` 文件
+	* 缓冲区中的单词
 
-Snippets will always win if the current prefix matches their tab trigger
-exactly. For the rest of the completions sources, a fuzzy match is performed.
-Also, snippets will always lose against a fuzzy match. Note that this is only
-relevant if the completion is going to be inserted automatically. When the
-completions list is shown, snippets will be listed along the other items, even
-if the prefix only partially matches the snippets' tab triggers.
+如果当前前缀与其制表符触发器完全匹配，则片段将始终获胜。对于其余的补全源，执行模糊匹配。此外，片段总是会在模糊匹配中丢失。请注意，这仅在要自动插入补全时才有意义。显示补全列表时，即使前缀仅部分匹配代码段的选项卡触发器，也会沿其他项列出代码段。
 
-How to Use Completions
+如何使用补全
 ======================
 
-There are two methods to use completions, and although the priority given to
-completions when screening them is always the same, there is a difference in
-the result that will be explained below.
+有两种方法可以使用补全，虽然在补全筛选时给予补全的优先级总是相同的，但结果会有不同，下面将对此进行解释。
 
-Completions can be inserted in two ways: 
+可以通过两种方式插入补全：
 
-	* through the completions list (:kbd:`Ctrl+spacebar`);
-	* by pressing :kbd:`Tab`.
+	* 通过补全列表（:kbd:`Ctrl+spacebar`）;
+	* 按 :kbd:`Tab`.
 
 
-The Completions List
+补全清单
 ********************
 
-The completions list (:kbd:`Ctrl+spacebar`) may work in two ways: by bringing
-up a list of suggested words to be completed, or by inserting the best match
-directly.
+补全列表（:kbd:`Ctrl+空格键`）可以以两种方式工作：通过调出要补全的建议单词列表，或直接插入最佳匹配。
 
-If the choice of best completion is ambiguous, an interactive list will be
-presented to the user, who will have to select an item himself. Unlike other
-items, snippets in this list are displayed in this format:
-``<tab_trigger> : <name>``, where ``<tab_trigger>`` and ``<name>`` are
-variable.
+如果最佳补全的选择不明确，则将向用户呈现交互式列表，该用户必须自己选择项目。与其他项目不同，此列表中的片段以以下格式显示：``<tab_trigger>：<name>``，其中 ``<tab_trigger>`` 和 ``<name>`` 是可变的。
 
-The completion with :kbd:`Ctrl+spacebar` will only be automatic if the list of
-completion candidates can be narrowed down to one unambiguous choice given the
-current prefix.
+使用 :kbd:`Ctrl+空格键` 补全只有在补全候选列表可以缩小到给定当前前缀的一个明确选择时才会自动完成。
 
-:kbd:`Tab`-completed Completions
+:kbd:`Tab`-完成补全
 ********************************
 
-If you want to be able to tab-complete completions, the setting
-``tab_completion`` must be set to ``true``. By default, ``tab_completion`` is
-set to ``true``. Snippet tab-completion is unaffected by this setting: they
-will always be completed according to their tab trigger.
+如果您希望能够通过制表符补全，则必须将设置 ``tab_completion`` 设置为 ``true``。默认情况下，``tab_completion`` 设置为 ``true``。片段标签完成不受此设置的影响：它们将始终根据其标签触发器完成。
 
-With ``tab_completion`` enabled, completion of items is always automatic, which
-means that, unlike in the case of the completions list, Sublime Text will
-always make a decision for you. The rules to select the best completion are the
-same as above, but in case of ambiguity, Sublime Text will still insert the
-item deemed most suitable.
+启用 ``tab_completion`` 后，项目的补全始终是自动的，这意味着，与补全列表的情况不同，Sublime Text将始终为您做出决定。选择最佳补全的规则与上述相同，但如果含糊不清，Sublime Text仍将插入被认为最合适的项目。
 
-Inserting a Literal Tab Character
+插入文字制表符
 ---------------------------------
 
-When ``tab_completion`` is enabled, you can press ``Shift+Tab`` to insert a
-literal tab character.
+启用 ``tab_completion`` 后，可以按 ``Shift+Tab`` 键插入文字制表符。

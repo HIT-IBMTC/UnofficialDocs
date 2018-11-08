@@ -28,12 +28,7 @@
 ``command``
    代执行的命令.
 ``args``
-   Arguments to pass to ``command``. Note that to locate the packages folder
-   you need to use a snippet-like variable: ``${packages}`` or $packages. This
-   different to other areas of the editor due to different implementations of
-   the lower level layers.
-
-传给 ``command`` 的参数。 需要注意的是，要定位包所在目录，需要使用 ``${packages}`` 或 $packages。由于底层的实现不同，这与在编辑器的其他区域的用法略有不同。
+  传给 ``command`` 的参数。 需要注意的是，要定位包所在目录，需要使用 ``${packages}`` 或 $packages。由于底层的实现不同，这与在编辑器的其他区域的用法略有不同。
 
 
 如何使用命令面板
@@ -41,8 +36,5 @@
 
 #. 按 :kbd:`Ctrl+Shift+P`
 #. 选择命令
-
-Entries are filtered by current context. Not all entries will be visible at all
-times.
 
 显示的选项会根据上下文不同有所区别，并不是在任何时候都会显示所有选项。

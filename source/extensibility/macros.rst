@@ -1,51 +1,37 @@
 ======
-Macros
+宏
 ======
 
-Macros are a basic automation facility consisting in sequences of commands. Use
-them whenever you need to repeat the exact same steps to perform an operation.
+宏是一个基本的自动化设施，由命令序列组成。只要您需要重复完全相同的步骤来执行操作，请使用它们。
 
-Macro files are JSON files with the extension ``.sublime-macro``. Sublime Text
-ships with a few macros providing core functionality, such as line and word
-deletion. You can find these under **Tools | Macros**.
+宏文件是JSON文件，扩展名为 ``.sublime-macro``。Sublime Text附带了一些提供核心功能的宏，例如行和字删除。你可以在 **Tools | Macros** 下找到这些宏。
 
-How to Record Macros
+如何录制宏
 ********************
 
-To start recording a macro, press :kbd:`Ctrl+q` and subsequently execute the
-desired steps one by one. When you're done, press :kbd:`Ctrl+q` again to stop
-the macro recorder. Your new macro won't be saved to a file, but kept in the
-macro buffer instead. You will now be able to run the recorded macro by
-pressing :kbd:`Ctrl+Shift+q` or save it to a file by selecting
-**Tools | Save macro…**.
+要开始录制宏，请按 :kbd:`Ctrl+q`，然后逐个执行所需的步骤。完成后，再次按 :kbd:`Ctrl+q` 停止宏录制器。您的新宏不会保存到文件中，而是保存在宏缓冲区中。现在，您可以通过按 :kbd:`Ctrl+Shift+q` 运行录制的宏，或通过选择 **Tools | Save macro…** 将其保存到文件中......。
 
-Note that the macro buffer will only remember the macro recorded latest. Also,
-recorded macros only capture commands sent to the buffer: window level
-commands, such as creating a new file, will be ignored.
+请注意，宏缓冲区只会记住最新记录的宏。此外，记录的宏仅捕获发送到缓冲区的命令：窗口级命令（例如创建新文件）将被忽略。
 
-How to Edit Macros
+如何编辑宏
 ******************
 
-Alternatively to recording a macro, you can edit it by hand. Save a new file
-with the extension ``.sublime-macro`` under :file:`Packages\User` and add
-commands to it. This is how a macro file looks like::
+或者录制宏，您可以手动编辑它。在 :file:`Packages\User` 下保存扩展名为 ``.sublime-macro`` 的新文件，并向其添加命令。这是宏文件的样子：
 
    [
        {"command": "move_to", "args": {"to": "hardeol"}},
        {"command": "insert", "args": {"characters": "\n"}}
    ]
 
-See the :doc:`../core/commands` section for more information on commands.
+有关命令的更多信息，请参见 :doc:`../core/commands` 部分。
 
 .. XXX: do we need to escape every kind of quotations marks?
 
-If you're editing a macro by hand, you need to escape quotation marks,
-blank spaces and backslashes by preceding them with ``\``.
+如果您手动编辑宏，则需要通过在 ``\`` 前面加上引号，空格和反斜杠来转义。
 
-Where to Store Macros
+存储宏的位置
 *********************
 
-Macro files can be stored in any package folder, and they will show up
-under **Tools | Macros | <PackageName>**.
+宏文件可以存储在任何包文件夹中，它们将显示在 **Tools | Macros | <PackageName>** 下。
 
 
