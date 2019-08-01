@@ -1,7 +1,9 @@
 命令行用法
 ==================
+Sublime Text包含一个名为 ``subl`` 的命令行帮助程序。使用命令行帮助程序，您可以打开文件和文件夹，并从命令行执行其他操作。
 
-.. 请参考::
-   
-   `OS X Command Line <http://www.sublimetext.com/docs/2/osx_command_line.html>`_
-      Sublime Text的官方文档
+在使用 ``subl`` 之前，请确保它在您的 ``PATH`` 中。要将 ``subl`` 放在 ``PATH`` 中，您可能需要将目录添加到 ``PATH`` 或使用符号链接。
+
+调用
+------
+.. include:: ../_includes/command_line.g.txt

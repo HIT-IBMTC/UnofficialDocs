@@ -2,8 +2,7 @@
 缩进
 ===========
 
-更多信息请参考
+.. seealso::
 
    `缩进 <http://www.sublimetext.com/docs/2/indentation.html>`_
-      官方Sublime Text文档
-
+      Sublime Text官方文档
