@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 =====================================
-Sublime Text非官方文档（中文翻译版）
+Sublime Text 非官方文档（中文翻译版）
 =====================================
 
 本文档翻译自 `Sublime Text Unofficial Documentation <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_，译文如下：

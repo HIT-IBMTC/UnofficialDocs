@@ -15,12 +15,22 @@
 与命令文件相互联系。通常，命令不保证产生一个按键绑定，可以在 ``.sublime-commands``
 中作为一些很好的候选。
 
-文件格式（命令文件）
-============================
+.. figure:: images/command-palette-0001.png
 
-命令文件使用JSON，并且有一个 ``.sublime-commands`` 的扩展。
+  命令面板
+默认情况下，命令面板包含许多有用的命令，可以方便地访问各个设置以及设置文件。
 
-如下是来自 ``Packages/Default/Default.sublime-commands`` 的实例::
+要使用命令面板：
+
+1. 按下 ``Ctrl+Shift+P`` 。
+2. 选择一个命令
+3. 按下 ``Enter``。
+
+命令面板通过文本过滤选项。这意味着无论何时打开它，您都不会总是看到每个 ``.sublime-commands`` 文件中定义的所有命令。
+
+``.sublime-commands`` 文件的示例
+=================================
+以下是 ``Packages/Default/Default.sublime-commands`` 的摘录::
 
    [
        { "caption": "Project: Save As", "command": "save_project_as" },
@@ -33,19 +43,3 @@
        { "caption": "Preferences: User Global Settings", "command": "open_file", "args": {"file": "${packages}/User/Global.sublime-settings"} },
        { "caption": "Preferences: Browse Packages", "command": "open_dir", "args": {"dir": "$packages"} }
    ]
-
-``caption``
-   显示在命令面板中的标题.
-``command``
-   待执行的命令.
-``args``
-   传给 ``command`` 的参数。
-
-如何使用命令面板
-==============================
-
-#. 按下键盘的 `Ctrl+Shift+P`
-#. 选择命令
-
-命令面板通过文本过滤选项，所以无论什么时候打开，你都不会看到每一个 ``.sublime-commands`` 
-文件的所有命令。

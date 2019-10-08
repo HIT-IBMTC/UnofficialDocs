@@ -3,22 +3,19 @@
 ===================================
 
 .. _snr-search-files:
+用于搜索多个文件的搜索面板称为“**在文件中查找**”。
 
 搜索
 =========
 
 使用 ``Ctrl + Shift + F`` 键可以打开多文件搜索面板。搜索面板与搜索动作可以使用快捷键进行操作：
 
-==========================	===========
-Toggle Regular Expressions	``Alt + R``
+==========================  ===========
 开/关正则表达式选项           ``Alt + R``
-Toggle Case Sensitivity		``Alt + C``
 开/关大小写敏感选项           ``Alt + C``
-Toggle Exact matches		``Alt + W``
 开/关精确匹配选项             ``Alt + W``
-Find Next					``Enter``
 查找下一个                   ``Enter``
-==========================	===========
+==========================  ===========
 
 .. _snr-search-scope-files:
 
@@ -31,9 +28,11 @@ Find Next					``Enter``
 * 使用某种模式来添加/删除某些文件
 * 添加链接位置(``<open folders>``, ``<open files>``)
 
-你可以在一次搜索中组合使用以上确定作用域的方式，并且在不同方式之间用逗号分隔，例如：
+你可以在一次搜索中组合使用以上确定作用域的方式，并且在不同方式之间用逗号分隔。
 
-	/C/Users/Joe/Top Secret,-*.html,<open files>
+.. figure:: search-in-files-with-filters.png
+
+    Combining Where scopes in Find in Files
 
 通过在搜索面板中按 **...** 按钮来显示包含这些选项的菜单。
 
@@ -56,6 +55,13 @@ Windows平台上，可以使用 */C/Users/* 来指定盘符）
 * 在单独的缓冲区/输出面板中显示
 * 显示上下文
 
+.. figure:: search-and-replace-search-results.png
+
+    在文件中查找结果显示在视图中
+
+.. figure:: search-and-replace-results-buttons.png
+
+    用于自定义“在文件中查找”结果的按钮
 
 .. _snr-results-navigation-files:
 
@@ -64,9 +70,7 @@ Windows平台上，可以使用 */C/Users/* 来指定盘符）
 
 一旦找到了符合要求的内容，你就可以使用以下的快捷键进行结果之间的跳转：
 
-================	==============
-Next match			``F4``
+================    ==============
 转到下一个匹配项      ``F4``
-Previous match		``Shift + F4``
-转到前一个匹配相    ``Shift + F4``
-================	==============
+转到上一个匹配项      ``Shift + F4``
+================    ==============
